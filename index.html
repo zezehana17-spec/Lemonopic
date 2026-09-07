@@ -12,6 +12,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .review-extra[hidden] { display: none !important; }
+    .review-more-wrap { display: flex; justify-content: center; margin: 26px 0 12px; }
+    .review-more-button { appearance: none; border: 2px solid #0b0b0b; border-radius: 999px; background: #dfff00; color: #0b0b0b; padding: 14px 24px; font: inherit; font-size: 14px; font-weight: 900; cursor: pointer; }
+    .review-more-button:hover { transform: translateY(-1px); }
+    .review-source-note { max-width: 860px; margin: 18px 0 0; color: #777; font-size: 12px; line-height: 1.7; }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -165,10 +172,10 @@
             <p class="eyebrow">REAL YBM REVIEWS</p>
             <h2>직접 수강한<br />학생들의 이야기.</h2>
           </div>
-          <p>YBM에 공개된 실제 수강후기의 점수 변화와 경험을 바탕으로, 읽기 편하도록 문장 길이만 다듬었습니다.</p>
+          <p>YBM에 공개된 실제 수강후기의 점수 변화와 경험을 바탕으로, 원문의 핵심은 유지하면서 읽기 편한 1인칭 후기 형태로 정리했습니다.</p>
         </div>
 
-        <div class="review-grid">
+        <div class="review-grid" id="reviewGrid">
           <article class="review-card latest">
             <div class="review-meta"><span>조*빈</span><span>2026.09.02</span></div>
             <div class="review-score">IM1 <span>→</span> IH</div>
@@ -194,12 +201,88 @@
           </article>
 
           <article class="review-card">
+            <div class="review-meta"><span>박*민</span><span>2026.06.21</span></div>
+            <div class="review-score">FIRST <span>→</span> IH</div>
+            <h3>퇴근 후 수업, 첫 시험에서 IH</h3>
+            <p>오랜만에 영어를 다시 시작해서 걱정했지만, 최신 시험 경향과 주제별 답변 구성, 돌발 질문 대응까지 세세하게 배울 수 있었어요. 퇴근 후에도 학원 가는 날이 기다려졌고 첫 시험에서 IH를 받아 이제는 AL에 도전하려고 합니다.</p>
+            <span class="review-tag">#첫오픽 #최신경향 #AL도전</span>
+          </article>
+
+          <article class="review-card">
             <div class="review-meta"><span>김*진</span><span>2026.06.20</span></div>
             <div class="review-score">IM2 <span>→</span> IH</div>
             <h3>예전엔 IM2, 이번엔 한 달 만에 IH</h3>
             <p>예전에 다른 강의로 공부했을 때는 IM2에 머물렀는데 이번에는 한 달 만에 IH를 받았어요. 최신 시험 흐름에 맞는 피드백과 꾸준한 자료 덕분에 처음 보는 질문에도 훨씬 자신 있게 답할 수 있었습니다.</p>
             <span class="review-tag">#최신트렌드 #자신감 #실전영어</span>
           </article>
+
+          <article class="review-card">
+            <div class="review-meta"><span>배*은</span><span>2026.06.18</span></div>
+            <div class="review-score">NO MEMORIZE</div>
+            <h3>외우는 오픽보다 내 이야기로</h3>
+            <p>템플릿을 통째로 외우는 방식보다 제 경험으로 답변을 만들고 끝까지 말하는 연습이 저한테 훨씬 잘 맞았어요. 1:1 스크립트 첨삭과 밝고 편안한 분위기 덕분에 퇴근 후에도 부담 없이 꾸준히 준비할 수 있었습니다.</p>
+            <span class="review-tag">#개인스크립트 #편안한분위기 #말하기자신감</span>
+          </article>
+
+          <article class="review-card review-extra" hidden>
+            <div class="review-meta"><span>이*민</span><span>2026.06.06</span></div>
+            <div class="review-score">FIRST <span>→</span> IH</div>
+            <h3>영어가 무서웠는데 첫 오픽 IH</h3>
+            <p>영어로 말할 때 긴장을 많이 했는데, 제 이야기와 예상 질문으로 개인 맞춤 스크립트를 만들고 수업 후에도 숙제·카톡 피드백을 받으면서 영어가 조금씩 편해졌어요. 시험만 준비한 게 아니라 영어와 친해졌다는 느낌이 가장 좋았습니다.</p>
+            <span class="review-tag">#첫오픽 #개인맞춤 #긍정에너지</span>
+          </article>
+
+          <article class="review-card review-extra" hidden>
+            <div class="review-meta"><span>유*현</span><span>2026.05.26</span></div>
+            <div class="review-score">FIRST <span>→</span> IH</div>
+            <h3>교과서 영어에서 진짜 스피킹으로</h3>
+            <p>교과서 문장을 외우는 건 익숙했지만 프리토킹은 어려웠는데, 수업을 들으며 한국어로 생각한 내용을 영어로 꺼내는 감각이 생겼어요. 개인 스크립트와 녹음 피드백, 매일 올라오는 표현까지 챙겨주셔서 첫 오픽에서 IH를 받았습니다.</p>
+            <span class="review-tag">#프리토킹 #녹음피드백 #첫시험IH</span>
+          </article>
+
+          <article class="review-card review-extra" hidden>
+            <div class="review-meta"><span>이*직</span><span>2026.05.18</span></div>
+            <div class="review-score">CONFIDENCE ↑</div>
+            <h3>영어가 계속 좋아지는 게 느껴졌어요</h3>
+            <p>수업을 들으면서 영어가 계속 나아지는 게 신기했고, 무엇보다 영어로 말하는 자신감이 생겼어요. 스피킹에 관심이 있다면 한번 직접 경험해보라고 추천하고 싶습니다.</p>
+            <span class="review-tag">#스피킹 #자신감 #성장</span>
+          </article>
+
+          <article class="review-card review-extra" hidden>
+            <div class="review-meta"><span>김*연</span><span>2026.05.13</span></div>
+            <div class="review-score">IM2 <span>→</span> IH</div>
+            <h3>4주 만에 IH, 이제 AL까지</h3>
+            <p>이직 준비 때문에 급하게 점수가 필요했는데 4주 만에 IM2에서 IH를 달성했어요. 단순 암기가 아니라 제 약점을 정확히 짚어주고 최신 표현과 자연스러운 답변 흐름을 알려줘서 시험장에서도 ‘대화하듯’ 말할 수 있었습니다.</p>
+            <span class="review-tag">#4주완성 #자연스러운발화 #AL목표</span>
+          </article>
+
+          <article class="review-card review-extra" hidden>
+            <div class="review-meta"><span>조*은</span><span>2026.04.21</span></div>
+            <div class="review-score">IM2 <span>→</span> IH</div>
+            <h3>외우기식 공부를 벗어나 3주 만에 IH</h3>
+            <p>다른 학원에서 스크립트를 외울 때는 입에 잘 붙지 않았는데, 레몬오픽에서는 제 이야기로 답변을 만들 수 있어서 훨씬 재미있었어요. 모의고사 녹음 피드백과 시험 직전 관리까지 받고 3주 만에 IH를 취득했습니다.</p>
+            <span class="review-tag">#3주IH #모의고사 #내이야기</span>
+          </article>
+
+          <article class="review-card review-extra" hidden>
+            <div class="review-meta"><span>김*현</span><span>2026.04.17</span></div>
+            <div class="review-score">IM1 <span>→</span> IH</div>
+            <h3>점수도 오르고 영어가 즐거워졌어요</h3>
+            <p>점수가 떨어져 멘탈이 흔들린 상태에서 시작했는데, 나만의 스크립트와 매일 받는 표현, 전화 연습까지 하면서 말할 때 막히는 게 줄었어요. IM1에서 IH까지 올라갔고, 취준 중에도 영어 공부가 즐거워졌다는 게 가장 큰 변화였습니다.</p>
+            <span class="review-tag">#IM1toIH #전화연습 #영어자신감</span>
+          </article>
+
+          <article class="review-card review-extra" hidden>
+            <div class="review-meta"><span>김*람</span><span>2026.03.30</span></div>
+            <div class="review-score">IM2 <span>→</span> IH</div>
+            <h3>승진 때문에 시작해서 3주 만에 IH</h3>
+            <p>회사 승진 때문에 오픽 점수가 필요해서 주말반을 찾다가 시작했는데 3주 만에 IH를 받았고 실제로 승진에도 도움이 됐어요. 목표 점수를 받은 뒤에도 프리토킹·출장·업무 영어에 도움이 돼서 계속 수강하게 됐습니다.</p>
+            <span class="review-tag">#승진 #3주IH #비즈니스영어</span>
+          </article>
+        </div>
+
+        <div class="review-more-wrap">
+          <button class="review-more-button" id="reviewMoreButton" type="button" aria-expanded="false">후기 7개 더보기 ↓</button>
         </div>
 
         <div class="review-summary">
@@ -209,7 +292,7 @@
           <div><strong>6</strong><span>시험 트렌드에 적합해요</span></div>
         </div>
 
-        <p class="proof-note">* YBM 실제 수강후기 기반 · 원문의 사실관계와 핵심 경험은 유지하고 문장 길이와 표현만 편집했습니다.</p>
+        <p class="review-source-note">YBM 공개 수강후기 23건 중 작성자·날짜·개별 후기 내용을 확인할 수 있는 후기들을 바탕으로 정리했습니다. 원문의 점수 변화와 핵심 경험은 유지하고, 홈페이지에서 읽기 쉽도록 문장을 짧게 편집했습니다.</p>
         <a class="text-link" href="https://www.ybmedu.com/kangnam/lemonopic" target="_blank" rel="noopener">YBM에서 23개 전체 수강후기 보기 ↗</a>
       </div>
     </section>
@@ -230,5 +313,19 @@
       <p>본 페이지는 강사 개인 소개용 페이지이며, 실제 수강신청·강의 일정·수강료는 YBM 공식 페이지를 기준으로 합니다.</p>
     </div>
   </footer>
+
+  <script>
+    (() => {
+      const button = document.getElementById('reviewMoreButton');
+      const extras = Array.from(document.querySelectorAll('.review-extra'));
+      if (!button || !extras.length) return;
+      button.addEventListener('click', () => {
+        const opening = button.getAttribute('aria-expanded') !== 'true';
+        extras.forEach(card => { card.hidden = !opening; });
+        button.setAttribute('aria-expanded', String(opening));
+        button.textContent = opening ? '후기 접기 ↑' : '후기 7개 더보기 ↓';
+      });
+    })();
+  </script>
 </body>
 </html>
